@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --emerald: #0f6b4f;
+  --emerald-deep: #0a4d39;
+  --gold: #c79a3a;
+  --cream: #f6f4ec;
+  --ink: #14302a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: '"Hind Siliguri"', Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
+  }
+
+  /* Mihrab arch frame — the signature motif */
+  .arch {
+    border-top-left-radius: 999px;
+    border-top-right-radius: 999px;
+  }
+
+  .arch-card {
+    @apply relative overflow-hidden bg-white shadow-card;
+    border-top-left-radius: 110px;
+    border-top-right-radius: 110px;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-gold;
+  }
+
+  .section-title {
+    @apply font-display text-3xl font-bold text-emerald-deep sm:text-4xl;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3 text-base font-semibold text-emerald-dark shadow-soft transition hover:bg-gold-soft hover:-translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-gold/40;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/70 px-7 py-3 text-base font-semibold text-white transition hover:bg-white/10 focus:outline-none focus-visible:ring-4 focus-visible:ring-white/40;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-emerald px-6 py-2.5 text-base font-semibold text-emerald-deep transition hover:bg-emerald hover:text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-emerald/30;
+  }
+
+  .nav-link {
+    @apply relative rounded-full px-3 py-2 text-[15px] font-medium text-ink/80 transition hover:text-emerald-deep;
+  }
+
+  .nav-link-active {
+    @apply text-emerald-deep;
+  }
+}
+
+/* Subtle Islamic geometric backdrop */
+.pattern-geo {
+  background-image: radial-gradient(circle at 1px 1px, rgba(15, 107, 79, 0.07) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+.pattern-gold {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(199, 154, 58, 0.12) 0,
+    rgba(199, 154, 58, 0.12) 1px,
+    transparent 1px,
+    transparent 12px
+  );
+}
+
+/* Decorative divider with star */
+.divider-star {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+.divider-star::before,
+.divider-star::after {
+  content: '';
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+.divider-star::after {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hide scrollbar for gallery filter row on mobile */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
