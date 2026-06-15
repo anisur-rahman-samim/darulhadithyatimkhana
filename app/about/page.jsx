@@ -16,7 +16,7 @@ export default function AboutPage() {
           <div className="arch-card aspect-[4/3]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/signboard.jpg"
+              src="/images/signboard.png"
               alt={t('about_history_title')}
               className="h-full w-full object-cover"
             />

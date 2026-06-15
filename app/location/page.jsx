@@ -31,7 +31,7 @@ export default function LocationPage() {
             <div className="arch-card mt-8 aspect-[4/3]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/signboard.jpg"
+                src="/images/signboard.png"
                 alt={t('brand_name')}
                 className="h-full w-full object-cover"
               />
